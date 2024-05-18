@@ -25,7 +25,7 @@ sh /opt/tomcat10/bin/startup.sh
 # create a soft link to start and stop tomcat
 # This will enable us to manage tomcat as a service
 sudo ln -s /opt/tomcat10/bin/startup.sh /usr/bin/starttomcat
-sudo ln -s /opt/tomcat10sud/bin/shutdown.sh /usr/bin/stoptomcat
+sudo ln -s /opt/tomcat10/bin/shutdown.sh /usr/bin/stoptomcat
 starttomcat
 echo "end on tomcat installation"
 #========
