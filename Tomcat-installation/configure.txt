@@ -4,6 +4,11 @@
 find / -name server.xml context.xml
 vim /opt/tomcat9/conf/server.xml
 vi /opt/tomcat9/webapps/manager/META-INF/context.xml
+			comment this line
+  <!--
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+  allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+
 vi /opt/tomcat9/conf/tomcat-user.xml  # to add user
 
 	<user username="landmark" password="admin" roles="manager-gui,admin-gui"/>
