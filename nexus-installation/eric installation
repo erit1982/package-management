@@ -1,0 +1,26 @@
+[nexus@nexus opt]$ history
+    1  cd /opt
+    2  sudo yum install wget git nano unzip -y
+    3  sudo yum install java vim -y
+    4  sudo wget https://download.sonatype.com/nexus/3/nexus-3.68.1-02-java11-unix.tar.gz
+    5  ls
+    6  sudo tar -zxvf nexus-3.68.1-02-java11-unix.tar.gz
+    7  sudo rm -rf nexus-3.68.1-02-java11-unix.tar.gz
+    8  ls
+    9  sudo mv /opt/nexus-3.68.1-02 /opt/nexus
+   10  # Change the owner and group permissions to /opt/nexus and /opt/sonatype-work directories.
+   11  sudo chown -R nexus:nexus /opt/nexus
+   12  sudo chown -R nexus:nexus /opt/sonatype-work
+   13  sudo chmod -R 775 /opt/nexus
+   14  sudo chmod -R 775 /opt/sonatype-work
+   15  echo  'run_as_user="nexus" ' > /opt/nexus/bin/nexus.rc
+   16  sudo ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
+   17  #9 Enable and start the nexus services
+   18  sudo systemctl enable nexus
+   19  sudo systemctl start nexus
+   20  sudo systemctl status nexus
+   21  echo "end of nexus installation"
+   22  curl -v 3.88.31.121:8081
+   23  clear
+   24  history
+[nexus@nexus opt]$
