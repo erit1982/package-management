@@ -1,0 +1,18 @@
+ 1  sudo passwd sonar
+    2  sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config
+    3  sudo service sshd restart
+    4  cd /opt
+    5  sudo yum -y install unzip wget git
+    6  sudo yum install  vim java -y
+    7  sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
+    8  sudo unzip sonarqube-7.8.zip
+    9  sudo rm -rf sonarqube-7.8.zip
+   10  sudo mv sonarqube-7.8 sonarqube
+   11  ls
+   12  sudo chown -R sonar:sonar /opt/sonarqube/
+   13  sudo chmod -R 775 /opt/sonarqube/
+   14  sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start
+   15  sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
+   16  curl -v localhost:9000
+   17  history
+[sonar@sonar opt]$
